@@ -2,15 +2,29 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <CustomNav Name="Oren Collaco" ProfileImage="oren.jpg" 
-    v-bind:Items =  '{
-    List: [
+    v-bind:MainContent =  '{
+    Items: [
         {
-            "Name": "value1",
-            "prop2":"value2"
+            "Title": "Education",
+            "Id": "education",
+            "ContentText":"value2"
         },
         {
-            "Name": "value3", 
-            "prop2":"value4"
+            "Title": "Experience",
+            "Id": "experience", 
+            "ContentText":"value4",
+            SubItems: [
+            {
+              Id: "experience-konnect",
+              Title: "Konnect Insights",
+              Subtitle: "5 Months"
+            },
+            {
+              Id: "experience-some",
+              Title: "Some company",
+              Subtitle: "6 Months"
+            }
+            ]
         }
     ]
 }'
