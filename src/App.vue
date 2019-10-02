@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <CustomNav Name="Oren Collaco" ProfileImage="oren.jpg" 
+    v-bind:Items =  '{
+    List: [
+        {
+            "Name": "value1",
+            "prop2":"value2"
+        },
+        {
+            "Name": "value3", 
+            "prop2":"value4"
+        }
+    ]
+}'
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CustomNav from './components/CustomNav.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    CustomNav
   }
 }
+
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
