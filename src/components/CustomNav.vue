@@ -1,9 +1,17 @@
 <template>
   <b-container fluid>
     <b-row>
-      <b-col cols="3">
+      <b-col cols="2" class="bg-color">
         <b-navbar v-b-scrollspy:scrollspy-nested class="flex-column">
           <b-navbar-brand href="#">{{ Name }}</b-navbar-brand>
+          <span class="d-block d-lg-none">{{ Name }}</span>
+          <span class="d-none d-lg-block">
+            <img
+              class="img-fluid img-profile rounded-circle mx-auto mb-2"
+              :src="require (`@/assets/${ProfileURL}`)"
+              alt
+            />
+          </span>
           <b-nav v-if="MainContent.Items.length" pills vertical>
             <div v-for="i in MainContent.Items.length" v-bind:key="i">
               <b-nav-item
@@ -22,7 +30,7 @@
         </b-navbar>
       </b-col>
 
-      <b-col cols="9">
+      <b-col cols="10">
         <div id="scrollspy-nested" style="position:relative; height:100vh; overflow-y:auto">
           <div v-if="MainContent.Items.length">
             <div v-for="i in MainContent.Items.length" v-bind:key="i" class="screen-height">
@@ -88,5 +96,14 @@ body {
 
 .screen-height {
   height: 100vh;
+}
+
+.img-profile {
+  max-width: 10rem;
+  max-height: 10rem;
+  border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <CustomNav Name="Oren Collaco" ProfileImage="oren.jpg" 
+    <CustomNav Name="Oren Collaco" ProfileURL="oren.jpg" 
     v-bind:MainContent =  '{
     Items: [
         {
