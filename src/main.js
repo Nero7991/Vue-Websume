@@ -3,6 +3,10 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Slider from '@jeremyhamm/vue-slider'
+//import $ from "jquery";
+
+Vue.use(Slider)
 
 Vue.use(BootstrapVue)
 
