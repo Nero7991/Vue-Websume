@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <vue-headful
-            title="It's Oren"
-            description="Oren Collaco's stuff. You're invited to look around"
+            title="Oren Collaco"
+            description="Oren Collaco's stuff. Have a look around"
             :image="require (`@/assets/logo.png`)"
         />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -12,7 +12,7 @@
         {
             "Title": "About",
             "Id": "about",
-            "ContentText": "As a kid I was always curious of how things worked, sometimes dad would disassemble things for me, sometimes I would destructively teardown things just to see how things worked. Kid me, could not understand the workings even after having disassembled the things though. Although I got basic understanding from this and started building simple things like adding 1.5v bulbs in series and parallel and adding buttons to control them. The kid me would be proud of the current me considering the knowledge Ive acquired since. I am also interested in football, and enjoy playing it when I get a chance. Music is one of my passion that always puts me at peace.",
+            "ContentText": "As a kid I was always curious of how things worked, sometimes dad would disassemble things for me, sometimes I would destructively teardown things just to see how things worked. Kid me, could not understand the workings even after having disassembled the things though. Although I got basic understanding from this and started building simple things like small houses with controllable lights and fans. This made the whole world of electronics and computers fasinating to me. I thought of it as tools that could be used to do almost anything that I imagined. The kid me would be proud of the current me considering the knowledge Ive acquired since. I am also interested in football, and enjoy playing it when I get a chance. Music is one of my passion that always puts me at peace. I liked collecting equipment from friends and family who had no use for them. Over the years, I have being adding to my wannabe-electronics lab, and currently it seems to live true to the definition of a electronics lab.",
             SubItems: [
             {
               Id: "about-labpics",
@@ -34,7 +34,7 @@
               Id: "projects-watch",
               Title: "OLED Wrist Watch",
               Subtitle: "Wrist Watch based on ATmega328P microcontroller • 3rd Year Mini Project",
-              ContentText: "We decided to work on FPGA as we had heard about its enormous potential but never got he opportunity to work on it. FPGAs can be to perform multiple computations in parallel and very high speed. They are used in custom solutions that deal with huge streams of data like high resolution video footage. The project we implemented could generate sine, triangle and square waveforms using Spartan 3 FPGA. DAC with 8-bit resolution and sampling rate of 5MHz(The settling time is 100ns) is used to generate the analog signals.",
+              ContentText: "Started this project as a way to test my abilities and learn from the mistakes that will undoubtedly be made while working on this project. Designing a watch from almost the ground up is a pretty tough task and many challenges were encountered in the process. After few months of debugging of hardware and software side of project. The basic project was realised. The watch worked pretty well although looked hideous relative to a normal watch. In time, issues were found and fixed but the overall project was a huge success and many things were learned in the process.",
               ImageCount: 5
             },
             {
@@ -88,7 +88,7 @@
               {
               Id: "education-tb",
               Title: "Thomas Baptista Junior College • 83.85%",
-              Subtitle: "Science • 2014"
+              Subtitle: "Computer Science • 2014"
               },
               {
               Id: "education-agnel",

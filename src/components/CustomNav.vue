@@ -3,24 +3,24 @@
         <b-row>
             <div id="Sidebar" class="col-sm-4 col-md-3 bg-color ">
                 <!-- <slider
-                                      :width="300"
-                                      format="push"
-                                      direction="left"
-                                      :opacity="0.15"
-                                      :links="[{'id': 1, 'text': 'Link 1', 'url': 'https://github.com'}, {'id': 2, 'text': 'Link 2', 'url': 'https://github.com'}]"
-                                    > -->
+                                                          :width="300"
+                                                          format="push"
+                                                          direction="left"
+                                                          :opacity="0.15"
+                                                          :links="[{'id': 1, 'text': 'Link 1', 'url': 'https://github.com'}, {'id': 2, 'text': 'Link 2', 'url': 'https://github.com'}]"
+                                                        > -->
                 <b-navbar toggleable="sm" v-b-scrollspy:scrollspy-nested class="flex-column nav-holder navbar-fixed-top">
                     <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
                     <!-- <b-navbar-brand href="#">{{ Name }}</b-navbar-brand> -->
                     <b-collapse id="nav-text-collapse" is-nav>
                         <!-- <span class="d-block d-lg-none">{{ Name }}</span> -->
                         <span class="d-none d-sm-block" id="ProfileImage">
-                                            <img
-                                              class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                                              :src="require (`@/assets/${ProfileURL}`)"
-                                              alt
-                                            />
-                                          </span>
+                                                                <img
+                                                                  class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                                                                  :src="require (`@/assets/${ProfileURL}`)"
+                                                                  alt
+                                                                />
+                                                              </span>
                         <b-nav v-if="MainContent.Items.length" pills vertical id="IndexHolder">
                             <div v-for="i in MainContent.Items.length" v-bind:key="i">
                                 <b-nav-item class="IndexItem" v-bind:href="'#' + MainContent.Items[i - 1].Id">{{ MainContent.Items[i - 1].Title }}</b-nav-item>
@@ -41,6 +41,13 @@
                         <div v-for="i in MainContent.Items.length" v-bind:key="i" class="screen-height">
                             <div class="dummy-nav" v-bind:id="MainContent.Items[i - 1].Id"></div>
                             <h4 class="ContentHeader" v-bind:id="MainContent.Items[i - 1].Id">{{ MainContent.Items[i - 1].Title }}</h4>
+                            <span class="ProfileMobile" v-if="MainContent.Items[i - 1].Id == 'about'">
+                                                                <img
+                                                                  class="img-fluid img-profile-mobile rounded-circle mx-auto mb-2"
+                                                                  :src="require (`@/assets/${ProfileURL}`)"
+                                                                  alt
+                                                                />
+                                                              </span>
                             <p v-if="MainContent.Items[i - 1].ContentText.length" class="ContentText">{{ MainContent.Items[i - 1].ContentText }}</p>
                             <div v-if="MainContent.Items[i-1].SubItems">
                                 <div class="project-holder" v-for="j in MainContent.Items[i-1].SubItems.length" v-bind:key="j">
@@ -127,6 +134,15 @@ Vue.component("item-content", {
 
 #ProfileImage {
     padding-top: 20%;
+}
+
+.img-profile-mobile {
+    max-width: 13rem;
+    max-height: 13rem;
+    border: 0.5rem solid rgba(230, 100, 7, 0.56);
+    object-fit: cover;
+    width: 12rem;
+    height: 12rem;
 }
 
 #IndexHolder {
@@ -253,7 +269,7 @@ body {
     #Sidebar {
         position: fixed;
         min-height: unset;
-        z-index: 2;
+        z-index: 18;
     }
     .dummy-nav {
         display: block;
@@ -276,9 +292,15 @@ body {
         height: 300px;
         border-radius: 10px;
     }
+    .ProfileMobile {
+        margin-top: 7%;
+        margin-bottom: 3%;
+        text-align: center;
+        display: block;
+    }
 }
 
-@media screen and (min-width: 577px) and (max-width: 991px) {
+@media screen and (min-width: 576px) and (max-width: 992px) {
     .CarouselHolder {
         max-height: 300px;
         height: 300px;
@@ -288,6 +310,9 @@ body {
         max-height: 300px;
         height: 300px;
         border-radius: 10px;
+    }
+    .ProfileMobile {
+        display: none;
     }
 }
 
@@ -308,6 +333,8 @@ body {
         height: 500px;
         border-radius: 10px;
     }
+    .ProfileMobile {
+        display: none;
+    }
 }
-
 </style>
