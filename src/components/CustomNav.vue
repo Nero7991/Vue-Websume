@@ -3,33 +3,34 @@
         <b-row>
             <div id="Sidebar" class="col-sm-4 col-md-3 bg-color ">
                 <!-- <slider
-                                                          :width="300"
-                                                          format="push"
-                                                          direction="left"
-                                                          :opacity="0.15"
-                                                          :links="[{'id': 1, 'text': 'Link 1', 'url': 'https://github.com'}, {'id': 2, 'text': 'Link 2', 'url': 'https://github.com'}]"
-                                                        > -->
+                                                              :width="300"
+                                                              format="push"
+                                                              direction="left"
+                                                              :opacity="0.15"
+                                                              :links="[{'id': 1, 'text': 'Link 1', 'url': 'https://github.com'}, {'id': 2, 'text': 'Link 2', 'url': 'https://github.com'}]"
+                                                            > -->
                 <b-navbar toggleable="sm" v-b-scrollspy:scrollspy-nested class="flex-column nav-holder navbar-fixed-top">
                     <b-navbar-toggle target="nav-text-collapse"></b-navbar-toggle>
                     <!-- <b-navbar-brand href="#">{{ Name }}</b-navbar-brand> -->
                     <b-collapse id="nav-text-collapse" is-nav>
                         <!-- <span class="d-block d-lg-none">{{ Name }}</span> -->
                         <span class="d-none d-sm-block" id="ProfileImage">
-                                                                <img
-                                                                  class="img-fluid img-profile rounded-circle mx-auto mb-2"
-                                                                  :src="require (`@/assets/${ProfileURL}`)"
-                                                                  alt
-                                                                />
-                                                              </span>
+                                                                    <img
+                                                                      class="img-fluid img-profile rounded-circle mx-auto mb-2"
+                                                                      :src="require (`@/assets/${ProfileURL}`)"
+                                                                      alt
+                                                                    />
+                                                                  </span>
                         <b-nav v-if="MainContent.Items.length" pills vertical id="IndexHolder">
                             <div v-for="i in MainContent.Items.length" v-bind:key="i">
                                 <b-nav-item class="IndexItem" v-bind:href="'#' + MainContent.Items[i - 1].Id">{{ MainContent.Items[i - 1].Title }}</b-nav-item>
-                                <b-collapse id="Something">
-                                    <b-nav v-if="MainContent.Items[i-1].SubItems" pills vertical>
-                                        <b-nav-item v-if="MainContent.Items[i-1].SubItems[j-1].Subtitle.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false) && MainContent.Items[i-1].SubItems" v-for="j in MainContent.Items[i-1].SubItems.length" v-bind:key="j" class="ml-3 my-1"
-                                            v-bind:href="'#' + MainContent.Items[i-1].SubItems[j-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Title }}</b-nav-item>
+                                <!-- <b-collapse id="Something"> -->
+                                
+                                    <b-nav v-if="MainContent.Items[i-1].SubItems" class="SubIndexHolder" pills vertical>
+                                        <b-nav-item v-if="MainContent.Items[i-1].SubItems[j-1].Subtitle.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false)" v-for="j in MainContent.Items[i-1].SubItems.length" v-bind:key="j" class="ml-3 my-1" v-bind:href="'#' + MainContent.Items[i-1].SubItems[j-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Title }}</b-nav-item>
                                     </b-nav>
-                                </b-collapse>
+                                
+                                <!-- </b-collapse> -->
                             </div>
                         </b-nav>
                     </b-collapse>
@@ -42,21 +43,21 @@
                             <div class="dummy-nav" v-bind:id="MainContent.Items[i - 1].Id"></div>
                             <h4 class="ContentHeader" v-bind:id="MainContent.Items[i - 1].Id">{{ MainContent.Items[i - 1].Title }}</h4>
                             <span class="ProfileMobile" v-if="MainContent.Items[i - 1].Id == 'about'">
-                                                                <img
-                                                                  class="img-fluid img-profile-mobile rounded-circle mx-auto mb-2"
-                                                                  :src="require (`@/assets/${ProfileURL}`)"
-                                                                  alt
-                                                                />
-                                                              </span>
+                                                                    <img
+                                                                      class="img-fluid img-profile-mobile rounded-circle mx-auto mb-2"
+                                                                      :src="require (`@/assets/${ProfileURL}`)"
+                                                                      alt
+                                                                    />
+                                                                  </span>
                             <p v-if="MainContent.Items[i - 1].ContentText.length" class="ContentText">{{ MainContent.Items[i - 1].ContentText }}</p>
                             <div v-if="MainContent.Items[i-1].SubItems">
                                 <div class="project-holder" v-for="j in MainContent.Items[i-1].SubItems.length" v-bind:key="j">
-                                    <h5 v-if="MainContent.Items[i-1].SubItems[j-1].Title.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false)" class="SubContentHeader" v-bind:id="MainContent.Items[i-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Title }}</h5>
-                                    <h6 v-if="MainContent.Items[i-1].SubItems[j-1].Subtitle.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false)" class="SubContentTitle" v-bind:id="MainContent.Items[i-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Subtitle }}</h6>
+                                    <h5 v-if="MainContent.Items[i-1].SubItems[j-1].Title.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false)" class="SubContentHeader" v-bind:id="MainContent.Items[i-1].SubItems[j-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Title }}</h5>
+                                    <h6 v-if="MainContent.Items[i-1].SubItems[j-1].Subtitle.length && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed != false)" class="SubContentTitle" v-bind:id="MainContent.Items[i-1].SubItems[j-1].Id">{{ MainContent.Items[i-1].SubItems[j-1].Subtitle }}</h6>
                                     <p v-if="MainContent.Items[i-1].SubItems[j-1].ContentText && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed) != false" class="SubContentText">{{ MainContent.Items[i-1].SubItems[j-1].ContentText }}</p>
                                     <div class="img-project-holder" v-if="MainContent.Items[i-1].SubItems[j-1].ImageCount">
                                         <!-- <img v-for="k in MainContent.Items[i-1].SubItems[j-1].ImageCount" v-bind:key="k" class="img-fluid img-project col-sm-12 col-md-4" :src="require (`@/assets/${MainContent.Items[i-1].SubItems[j-1].Id + k + '.jpeg'}`)" alt /> -->
-                                        <b-carousel class="CarouselHolder" id="carousel-1" v-model="slide" :interval="3000" controls indicators background="transparent" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart" @sliding-end="onSlideEnd">
+                                        <b-carousel class="CarouselHolder" id="carousel-1" v-model="slide" :interval="3000" controls indicators background="transparent" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart" @sliding-end="onSlideEnd" >
                                             <b-carousel-slide v-bind:text="MainContent.Items[i-1].SubItems[j-1].ImageText" class="CarouselElement" v-for="k in MainContent.Items[i-1].SubItems[j-1].ImageCount" v-bind:key="k" :img-src="require (`@/assets/${MainContent.Items[i-1].SubItems[j-1].Id + k + '.jpeg'}`)"></b-carousel-slide>
                                         </b-carousel>
                                     </div>
@@ -93,8 +94,18 @@ export default {
           nisi sit est tempor laborum mollit labore officia laborum excepteur
           commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur
           ipsum commodo tempor sunt in proident.
-        `
+        `,
+        slide: 0,
+        sliding: null
         };
+    },
+    methods: {
+      onSlideStart(slide) {
+        this.sliding = true
+      },
+      onSlideEnd(slide) {
+        this.sliding = false
+      }
     }
 };
 Vue.component("item-content", {
@@ -184,6 +195,10 @@ Vue.component("item-content", {
     font-size: 1rem;
     padding-left: 3%;
     padding-top: 1%;
+}
+
+.SubIndexHolder {
+    display: none;
 }
 
 .IndexItem {
@@ -316,7 +331,7 @@ body {
     }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 992px) and (max-width: 1600px){
     #Sidebar {
         max-width: 22% !important;
     }
@@ -331,6 +346,28 @@ body {
     .CarouselElement {
         max-height: 500px;
         height: 500px;
+        border-radius: 10px;
+    }
+    .ProfileMobile {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #Sidebar {
+        max-width: 16% !important;
+    }
+    #MainContent {
+        min-width: 84% !important;
+    }
+    .CarouselHolder {
+        max-height: 800px;
+        height: 800px;
+        border-radius: 10px;
+    }
+    .CarouselElement {
+        max-height: 800px;
+        height: 800px;
         border-radius: 10px;
     }
     .ProfileMobile {

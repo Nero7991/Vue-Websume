@@ -12,7 +12,7 @@
         {
             "Title": "About",
             "Id": "about",
-            "ContentText": "As a kid I was always curious of how things worked, sometimes dad would disassemble things for me, sometimes I would destructively teardown things just to see how things worked. Kid me, could not understand the workings even after having disassembled the things though. Although I got basic understanding from this and started building simple things like small houses with controllable lights and fans. This made the whole world of electronics and computers fasinating to me. I thought of it as tools that could be used to do almost anything that I imagined. The kid me would be proud of the current me considering the knowledge Ive acquired since. I am also interested in football, and enjoy playing it when I get a chance. Music is one of my passion that always puts me at peace. I liked collecting equipment from friends and family who had no use for them. Over the years, I have being adding to my wannabe-electronics lab, and currently it seems to live true to the definition of a electronics lab.",
+            "ContentText": "I like designing electronics products and writing code that enables users to accomplish a task or make it easier. The whole world of electronics and computers fasinating to me as it allows one to realise something they have in their minds. I think of them as tools that can be used to make ideas I have in my mind into something real. I like collecting equipment from friends and family who have no use for them. Over the years, I have being adding to my wannabe-electronics lab, and currently it seems to live true to the definition of a electronics lab which has helped me to experiment on things and different kinds of technologies",
             SubItems: [
             {
               Id: "about-labpics",
@@ -33,8 +33,8 @@
             {
               Id: "projects-watch",
               Title: "OLED Wrist Watch",
-              Subtitle: "Wrist Watch based on ATmega328P microcontroller • 3rd Year Mini Project",
-              ContentText: "Started this project as a way to test my abilities and learn from the mistakes that will undoubtedly be made while working on this project. Designing a watch from almost the ground up is a pretty tough task and many challenges were encountered in the process. After few months of debugging of hardware and software side of project. The basic project was realised. The watch worked pretty well although looked hideous relative to a normal watch. In time, issues were found and fixed but the overall project was a huge success and many things were learned in the process.",
+              Subtitle: "Wrist Watch based on ATmega328P microcontroller using OLED display • Personal Project",
+              ContentText: "Started this project as a way to test my abilities and learn from the mistakes that will undoubtedly be made while working on this project. Designing a watch from almost the ground up is a pretty tough task and many challenges were encountered in the process. Decided to use an OLED display as it consumer lower power depending on the number of pixels lit. Used the familiar ATmega328P microcontroller as it provided with the required low power modes, Pin state change interrupts, I2C interface and Real Time Clock(RTC). After few months of debugging of hardware and software side of project, the basic project was realised. The watch worked pretty well although looked hideous relative to a normal watch. In time, issues were found and fixed but the overall project was a huge success and many things were learned in the process.",
               ImageCount: 5
             },
             {
@@ -48,16 +48,23 @@
               Id: "projects-quadcontroller",
               Title: "Quadcopter Controller Design",
               Subtitle: "Quadcopter controller design using Bluetooth and ATmega328P microcontroller • 3rd Year Mini Project",
-              ContentText: "A 4.2V lithium battery that can supply 4A current is used to power the quadcopter, including microcontroller power, mpu6050 sensor power and the motors. Atmega328p microcontroller on this board runs at 1MHz, it could easily process data from mpu6050 to get board orientation.  We have a code running, which is compact, fast and well documented; it is written in C, so many C libraries could be used, or ported. For wireless communication, we used Bluetooth module which is  simple to setup and enough for our purpose, its  communication protocol  is also made it easy to use.",
+              ContentText: "The project helped us to test our ability to design a PCB from scratch using a mix of Surface mount and Through-hole components and to write working code that would be able to dynamically adjust motor speed to stabilize the quadcopter based on sensor data(MP6050). A 4.2V lithium battery that can supply 4A current is used to power the quadcopter, including microcontroller power, MPU6050 sensor power and the motors. Atmega328P microcontroller on this board runs at 1MHz, and can easily process data from MPU6050 to get board orientation. The motors pull huge current if started all at once with full speed, causing voltage dips and restarting the microcontroller. We mitigated this in the firmware by suppressing sudden speeding up of all 4 motors and added decoupling capacitors for all digital components.",
               ImageCount: 2
             },
             {
               Id: "projects-inconard",
               Title: "inConard",
               Subtitle: "IoT Mains power board based on ESP8266 WiFi Module and nRF24L01 transceiver • Final Year Project",
-              ContentText: "The WiFi module (ESP8266) connects to the WiFi network it is configured to connect to on boot up. If the WiFi network has internet available, it tries to connect to the server. On successful connection with the server, it keeps listening to commands from the server. Any ON or OFF command from the server is sent to the microcontroller. The microcontroller (ATmega328P) has direct control over the TRIAC, thus can control the power to any socket. It polls the buttons on the board that are used to manually control the sockets. ESP8266, transceiver and the microcontroller communicate using SPI. The microcontroller continuously checks the transceiver for data from the wireless sensors. If relevant data is found, the configured socket is toggled.", 
-              ImageCount: 4
+              ContentText: "Allows automation of large warehouse and halls. Uses battery powered wireless sensor to communicate with a central board to turn on/off appliances. The WiFi module (ESP8266) connects to the WiFi network it is configured to connect to on boot up. If the WiFi network has internet available, it tries to connect to the server. On successful connection with the server, it keeps listening to commands from the server. Any ON or OFF command from the server is sent to the microcontroller. The microcontroller (ATmega328P) has direct control over the TRIAC, thus can control the power to any socket. It uses interrupts on the pins connected to the buttons on the board to manually control the sockets. ESP8266, transceiver and the microcontroller communicate using SPI. The microcontroller continuously checks the transceiver for data from the wireless sensors. If relevant data is found, the configured socket is toggled.", 
+              ImageCount: 5
             },
+            {
+              Id: "projects-rc",
+              Title: "Speed Controlled Remote Vehicle with On-board Accelerometer and gyroscope",
+              Subtitle: "RC vehicle with fine speed control on ATmega328P and nRF24L01 transceiver • Personal Project",
+              ContentText: "Designed controller for remote controlled car that allowed minute speed in 256 steps of speed increments. Using the built in timers on the microcontroller that provides 2 independent PWM channels, speed control is implemented. On board ADC is used to provide battery level functionality. nRF24L01 tranceiver enables bidirectional communication between the remote and the vehicle.  The remote vehicle communicates back to the remote giving crucial information like battery level, etc. Uses PWM based on the aforementioned timer to control the speed of the drive motor in 256 steps for forward and backward. A OLED display on the remote displays necessary information", 
+              ImageCount: 6
+            }
             ]
         },
         {
@@ -126,6 +133,13 @@
               Id: "skill-4",
               Title: "",
               Subtitle: "Electronic circuits and Integrated circuits design",
+              ContentText: "",
+              IsDisplayed: true
+              },
+              {
+              Id: "skill-5",
+              Title: "",
+              Subtitle: "Reading device datasheets and searching for parts that fit the design",
               ContentText: "",
               IsDisplayed: true
               }
