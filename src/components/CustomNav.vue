@@ -57,7 +57,7 @@
                                     <p v-if="MainContent.Items[i-1].SubItems[j-1].ContentText && (MainContent.Items[i-1].SubItems[j-1].IsDisplayed) != false" class="SubContentText">{{ MainContent.Items[i-1].SubItems[j-1].ContentText }}</p>
                                     <div class="img-project-holder" v-if="MainContent.Items[i-1].SubItems[j-1].ImageCount">
                                         <!-- <img v-for="k in MainContent.Items[i-1].SubItems[j-1].ImageCount" v-bind:key="k" class="img-fluid img-project col-sm-12 col-md-4" :src="require (`@/assets/${MainContent.Items[i-1].SubItems[j-1].Id + k + '.jpeg'}`)" alt /> -->
-                                        <b-carousel class="CarouselHolder" id="carousel-1" v-model="slide" :interval="3000" controls indicators background="transparent" style="text-shadow: 1px 1px 2px #333;" @sliding-start="onSlideStart" @sliding-end="onSlideEnd" >
+                                        <b-carousel class="CarouselHolder" id="carousel-1" v-model="slide" :interval="3000" controls indicators background="transparent" style="text-shadow: 1px 1px 2px #333;" >
                                             <b-carousel-slide v-bind:text="MainContent.Items[i-1].SubItems[j-1].ImageText" class="CarouselElement" v-for="k in MainContent.Items[i-1].SubItems[j-1].ImageCount" v-bind:key="k" :img-src="require (`@/assets/${MainContent.Items[i-1].SubItems[j-1].Id + k + '.jpeg'}`)"></b-carousel-slide>
                                         </b-carousel>
                                     </div>
@@ -94,18 +94,8 @@ export default {
           nisi sit est tempor laborum mollit labore officia laborum excepteur
           commodo non commodo dolor excepteur commodo. Ipsum fugiat ex est consectetur
           ipsum commodo tempor sunt in proident.
-        `,
-        slide: 0,
-        sliding: null
+        `
         };
-    },
-    methods: {
-      onSlideStart(slide) {
-        this.sliding = true
-      },
-      onSlideEnd(slide) {
-        this.sliding = false
-      }
     }
 };
 Vue.component("item-content", {
