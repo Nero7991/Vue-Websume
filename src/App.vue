@@ -12,7 +12,7 @@
         {
             "Title": "About",
             "Id": "about",
-            "ContentText": "My passion for computers and electronics can be traced back to my childhood, tearing down gadgets to explore and understand their working was something I did frequently. Throughout my school years, I would try to make fun gadgets and do experiments related to things being taught at school. Me and my friends would participate in science exhibitions and win 1st place, but the experience of witnessing something, you were a major part of creating, in action would be the highlight. Things are moving fast in the technology world and thinking about the what the future would look like, keeps me excited.  At present, I design and program electronics circuits that go in products that empower people to do things better and faster. Over the years, I have being adding to my wannabe-electronics lab, and currently it seems to live true to the definition of a electronics lab which has helped me to experiment on things and different kinds of technologies",
+            "ContentText": "My passion for computers and electronics can be traced back to my childhood, tearing down gadgets to explore and understand their working was something I did frequently. Throughout my school years, I would try to make fun gadgets and do experiments related to things being taught at school. Me and my friends would participate in science exhibitions and win 1st place, but the experience of witnessing something, you were a major part of creating, in action would be the highlight. Things are moving fast in the technology world and thinking about the what the future would look like, keeps me excited.",
             SubItems: [
             {
               Id: "about-labpics",
@@ -62,7 +62,7 @@
               Id: "projects-rc",
               Title: "Speed Controlled Remote Vehicle with On-board Accelerometer and gyroscope",
               Subtitle: "RC vehicle with fine speed control on ATmega328P and nRF24L01 transceiver • Personal Project",
-              ContentText: "Designed controller for remote controlled car that allowed minute speed in 256 steps of speed increments. Using the built in timers on the microcontroller that provides 2 independent PWM channels, speed control is implemented. On board ADC is used to provide battery level functionality. nRF24L01 tranceiver enables bidirectional communication between the remote and the vehicle.  The remote vehicle communicates back to the remote giving crucial information like battery level, etc. Uses PWM based on the aforementioned timer to control the speed of the drive motor in 256 steps for forward and backward. A OLED display on the remote displays necessary information", 
+              ContentText: "Designed controller for remote controlled car that allowed minute speed control with 512 steps of speed increments in both directions. Using the built in timers on the microcontroller that provides 2 independent PWM channels, speed control is implemented. On board ADC is used to provide battery level functionality. nRF24L01 tranceiver enables bidirectional communication between the remote and the vehicle.  The remote vehicle communicates back to the remote giving crucial information like battery level, etc. Uses PWM based on the aforementioned timer to control the speed of the drive motor in 256 steps for forward and backward. A OLED display on the remote displays necessary information", 
               ImageCount: 6
             }
             ]
@@ -73,10 +73,16 @@
             "ContentText":"",
             SubItems: [
             {
+              Id: "experience-earth",
+              Title: "Grushie Energy Pvt. Ltd.",
+              Subtitle: "Hardware Design Intern",
+              ContentText: "Researched battery management systems to meet the power requirements of the main motor and researched motor controllers for driving the main motor. Responsible for designing the electric scooter display system and implemented EMI protection by placing diodes to suppress voltage spikes and capacitors at key points in the circuit."
+            },
+            {
               Id: "experience-konnect",
-              Title: "Konnect Insights",
-              Subtitle: "Software Developer • 6 Months",
-              ContentText: "Part of the team tasked with refreshing and adding competitve features to the existing Publish module. Publish module allowed clients to schedule posts to major social media platforms like Twitter, Facebook, Instagram and LinkedIn. Specially tasked with adding features to the compose box in the Publish module such as multiple tabs allowing easier flow while composing posts, implementation of mentions for Facebook and Twitter, built in link shortening, and more. Implemented the backend required to support the addition of the mentioned features. ASP.NET was used as the backend web application framework, with database requirements met by Microsoft SQL Server. The refreshed Publish module was overall praised by the clients for making the workflow for composing posts easier. The new design crafted by the team was received very postively." 
+              Title: "Prudence Software and Analytics Solutions Pvt. Ltd.",
+              Subtitle: "Software Developer • June 2019 - November 2019",
+              ContentText: "Part of the team tasked with refreshing and adding competitve features to the existing Publish module. Publish module allowed clients to schedule posts to major social media platforms like Twitter, Facebook, Instagram and LinkedIn. Specially tasked with adding features to the compose box in the Publish module such as multiple tabs allowing easier flow while composing posts, implementation of mentions for Facebook and Twitter, built in link shortening, and more. Implemented the backend required to support the addition of the mentioned features. ASP.NET was used as the backend web application framework, with database requirements met by Microsoft SQL Server. The refreshed Publish module was overall praised by the clients for making the workflow for composing and scheduling social media posts more efficient." 
             },
             {
               Id: "experience-some",
@@ -99,8 +105,13 @@
               },
               {
               Id: "education-agnel",
-              Title: "Fr. Conceicao Rodrigues College Of Engineering • 6.75 CGPA",
-              Subtitle: "Bachelor Of Engineering in Electronics • 2019"
+              Title: "Fr. Conceicao Rodrigues College Of Engineering • 6.75 CGPI",
+              Subtitle: "Bachelor Of Engineering in Electronics • Conferred November 2019"
+              },
+              {
+              Id: "education-vt",
+              Title: "Virginia Tech • 3.67 GPA",
+              Subtitle: "MS in Computer Engineering • Expected graduation around May 2023"
               }
             ]
         },
@@ -119,7 +130,7 @@
               {
               Id: "skill-2",
               Title: "",
-              Subtitle: "Programming: C, C++, Java, HTML, CSS, Python",
+              Subtitle: "Programming: C, C++, Python",
               ContentText: ""
               },
               {
@@ -165,6 +176,12 @@
               ContentText: ""
               },
               {
+              Id: "interest-2",
+              Title: "",
+              Subtitle: "Low Power Applications",
+              ContentText: ""
+              },
+              {
               Id: "interest-3",
               Title: "",
               Subtitle: "IoT based Automation",
@@ -174,7 +191,7 @@
               {
               Id: "interest-4",
               Title: "",
-              Subtitle: "Application Specific Integrated Design(ASIC) Design",
+              Subtitle: "FPGA/ASIC Design",
               ContentText: "",
               IsDisplayed: true
               },
@@ -183,14 +200,14 @@
               Title: "",
               Subtitle: "FPGA Design",
               ContentText: "",
-              IsDisplayed: true
+              IsDisplayed: false
               },
               {
               Id: "interest-6",
               Title: "",
               Subtitle: "Digital Signal Processing",
               ContentText: "",
-              IsDisplayed: true
+              IsDisplayed: false
               }
 
             ]
